@@ -1,6 +1,11 @@
+
+
+
+#creates account named John with 0 dollars in his account
 def __init__ (self,name):
   accocunt_name = John
   account_balance = 0
+#deposit function allows input of whatever amount, so long as it is positive and greater than zero into the account
 def deposit(self,amount):
   amount = int(input())
   if amount <=0:
@@ -9,6 +14,7 @@ def deposit(self,amount):
 else:
    account_balance += amount
    return True
+#withdraw function allows input of amount to withdraw, so long as it is positive, greater than zero, and is not greater than the amount of the account
 def withdraw(self,amount):
     amount = int(input())
     if amount <= 0 or amount > account balance:
@@ -16,8 +22,10 @@ def withdraw(self,amount):
       return False
     else:
       account_balance -= amount
+#returns balance of account 
 def getbalance(self):
     return account_balance
+#returns name of account
 def get_name(self):
     return account_name
     
