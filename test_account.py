@@ -19,3 +19,8 @@ def test_withdraw():
   assert account.get_balance() == 50
   assert account.withdraww(-10) == False
   assert account.get_balance() == 50
+
+
+test_withdraw()
+test_deposit()
+test_init()
