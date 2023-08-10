@@ -8,8 +8,8 @@ class Baccount:
   def deposit(self,amount):
     if self.amount <=0:
       return False
-  else:
-     self.account_balance += amount
+    else:
+       self.account_balance += amount
      return True
     
   def withdraw(self,amount):
@@ -17,6 +17,7 @@ class Baccount:
         return False
       else:
           self.account_balance -= amount
+        return True
         
   def getbalance(self):
       return self.account_balance
