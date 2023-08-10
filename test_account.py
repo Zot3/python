@@ -1,26 +1,29 @@
-def test_init():
-  account = Baccount("John")
-  asser account.get_name() == "John"
-  assert account.get_balance() == 0
+import unittest
+from account import BankAccount
 
-def test_deposit():
-  account = Baccount("John")
-  assert account.deposit(100) == True
-  assert account.get_balance() == 100
-  assert account.deposit(-50) == False
-  assert account.get_balance() == 100
+class TestBankAccount(unittest.TestCase):
 
-def test_withdraw():
-  account = Baccount("John")
-  account.deposit(100)
-  assert account.withdraw(50) == True
-  assert account.get_balance() == 50
-  assert account.withdraw(100) == False
-  assert account.get_balance() == 50
-  assert account.withdraww(-10) == False
-  assert account.get_balance() == 50
+    def test_init(self):
+        account = BankAccount("John")
+        self.assertEqual(account.get_name(), "John")
+        self.assertEqual(account.getbalance(), 0)
 
+    def test_deposit(self):
+        account = BankAccount("John")
+        self.assertTrue(account.deposit(100))
+        self.assertEqual(account.getbalance(), 100)
+        self.assertFalse(account.deposit(-50))
+        self.assertEqual(account.getbalance(), 100)
 
-test_withdraw()
-test_deposit()
-test_init()
+    def test_withdraw(self):
+        account = BankAccount("John")
+        account.deposit(100)
+        self.assertTrue(account.withdraw(50))
+        self.assertEqual(account.getbalance(), 50)
+        self.assertFalse(account.withdraw(100))
+        self.assertEqual(account.getbalance(), 50)
+        self.assertFalse(account.withdraw(-10))
+        self.assertEqual(account.getbalance(), 50)
+
+if __name__ == '__main__':
+    unittest.main()
